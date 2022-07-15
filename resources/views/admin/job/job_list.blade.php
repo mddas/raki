@@ -43,7 +43,7 @@
                             <select name="category_id" class="form-select" id="category_id">
                                 <option value="null" selected>Select Category</option>
                                 @foreach($categories as $cat)
-                                    <option value="/{{$cat->nav_category}}/{{$cat->id}}">{{$cat->caption}}</option>
+                                    <option value="/{{$cat->nav_category}}/{{$cat->id}}">{{$cat->caption ?? ''}}</option>
                                 @endforeach
                             </select>
                             <button type="button" class="btn btn-success add"><i class="fa fa-plus"
@@ -78,7 +78,7 @@
                                     <tr>
                                         <td>{{$index+1}}</td>
                                         <td>{{$job->id}}</td>
-                                        <td>{{$job->navigation->caption}}</td>                                     
+                                        <td>{{$job->navigation->caption ?? ''}}</td>                                     
                                         <td>{{$job->company_name}}</td>
                                         <td>{{$job->country}}</td>
                                         <td>Rs. {{$job->salary}}</td>
