@@ -77,17 +77,17 @@
                                 @foreach($jobs as $index=>$job)
                                     <tr>
                                         <td>{{$index+1}}</td>
-                                        <td>{{$job->id}}</td>
+                                        <td>{{$job->id ?? ''}}</td>
                                         <td>{{$job->navigation->caption ?? ''}}</td>                                     
-                                        <td>{{$job->company_name}}</td>
-                                        <td>{{$job->country}}</td>
-                                        <td>Rs. {{$job->salary}}</td>
-                                        <td>{{$job->contract_time}} Year</td>
-                                        <td>{{$job->navigation->short_content}}</td>
-                                        <td>{{$job->navigation->caption}}</td>
+                                        <td>{{$job->company_name ?? ''}}</td>
+                                        <td>{{$job->country ?? ''}}</td>
+                                        <td>Rs. {{$job->salary ?? ''}}</td>
+                                        <td>{{$job->contract_time ?? ''}} Year</td>
+                                        <td>{{$job->navigation->short_content ?? ''}}</td>
+                                        <td>{{$job->navigation->caption ?? ''}}</td>
                                         <td class="center">
                                             <input type="checkbox" class="page_status" name="page_status"
-                                                 data-id="{{$job->navigation->id}}" {{($job->navigation->page_status == 1)?'checked':''}} />
+                                                 data-id="{{$job->navigation->id ?? ''}}" {{($job->navigation->page_status == 1)?'checked':''}} />
                                         </td>
                                         <td>
                                             <a href="#/admin/navigation-edit/{{$job->nav_category}}{{$job->navigation->id}}/edit"
