@@ -8,12 +8,22 @@ class HomeController extends Controller
 {
     public function index(){
         $menus = Navigation::all()->where('nav_category','Main')->where('page_type','Group')->where('parent_page_id',0);
-        $about_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%about%")->where('page_type','Group')->latest()->first()->id;
-        $About = Navigation::all()->where('parent_page_id',$about_id)->last();
-        $banner_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%banner%")->where('page_type','Group')->latest()->first()->id;
-
-        $banners = Navigation::all()->where('parent_page_id',$banner_id);
         $jobs = Navigation::query()->where('page_type','Job')->latest()->get();
+        if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%about%")->where('page_type','Group')->latest()->first()!=null){
+            $about_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%about%")->where('page_type','Group')->latest()->first()->id;
+            $About = Navigation::all()->where('parent_page_id',$about_id)->last();
+        }
+        else{
+            $About = null;
+        }
+        if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%banner%")->where('page_type','Group')->latest()->first()!=null){
+            $banner_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%banner%")->where('page_type','Group')->latest()->first()->id;
+            $banners = Navigation::all()->where('parent_page_id',$banner_id);
+        }
+        else{
+            $banners = null;
+        }
+        
         return view("website.index")->with(['jobs'=>$jobs,'banners'=>$banners,'about'=>$About,'menus'=>$menus]);
     }
     public function category($slug){
