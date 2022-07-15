@@ -8,10 +8,13 @@ use Illuminate\Http\Request;
 class JobController extends Controller
 {
     public function jobList($nav_category = null){
-        $navigations  = Navigation::where('page_type','Job')->orderBy('position','ASC')->get();
+        //$navigations  = Navigation::where('page_type','Job')->orderBy('position','ASC')->get();
+        $jobs = Job::all();
+        //return $jobs;
+        //return $jobs->navigation;
         $categories = Navigation::where('page_type','Group')->where('parent_page_id',0)->get();
         //return $navigations;
-        return view('admin.job.job_list', compact('navigations','nav_category','categories'));
+        return view('admin.job.job_list', compact('jobs','nav_category','categories'));
     }
     public function AddJob($category){
        $request_segment = \Request::segment(4);
@@ -112,4 +115,5 @@ class JobController extends Controller
         return redirect('admin/navigation-list/'.$nav_category.$parent_id)->with('success','Data Added Succssfully!!');
 
     }
+  
 }

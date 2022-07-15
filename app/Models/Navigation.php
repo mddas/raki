@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Job;
 use Illuminate\Database\Eloquent\Model;
 
 class Navigation extends Model
@@ -56,4 +56,5 @@ class Navigation extends Model
 		$news =  $this->hasMany(Navigation::class,'parent_page_id','id');//Navigation::all()->where('parent_page_id')->latest()->get();
         return $news->orderBy('created_at', 'desc');
 	}
+ 
 }
