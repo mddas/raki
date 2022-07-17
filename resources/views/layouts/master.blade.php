@@ -28,18 +28,18 @@
 			<header class="header-one">
 				<div class="top-header">
 					<div class="container clearfix">
-						<div class="logo float-left"><a href="index.html"><img src="/website/images/logo/logo.png" alt=""></a></div>
+						<div class="logo float-left"><a href="/"><img src="uploads/icons/{{$global_setting->site_logo}}" alt=""></a></div>
 						<div class="address-wrapper float-right">
 							<ul>
 								<li class="address">
 									<i class="icon flaticon-placeholder"></i>
-									<h6>Nagarjun-9, Syuchatar</h6>
-									<p>Kathmandu, Nepal</p>
+									  <h6>{{$global_setting->website_full_address}}</h6>
+                                      <p>Kathmandu Nepal</p>
 								</li>
 								<li class="address">
 									<i class="icon flaticon-multimedia"></i>
-									<h6><a href="tel:015224502">01-5224502</a>	/	<a href="tel:015224503">5224503</a></h6>
-									<p><a href="mailto:info@rakiint.com.np">info@rakiint.com.np</a></p>
+									<h6><a href="tel:015224502">{{$global_setting->phone}}</a>	/	<a href="tel:015224503">{{$global_setting->phone_ne}}</a></h6>
+									<p><a href="mailto:info@rakiint.com.np">{{$global_setting->site_email}}</a></p>
 								</li>
 								<li class="quotes"><a href="apply-form.html" target="_blank">Apply Now</a></li>
 							</ul>
@@ -55,22 +55,18 @@
 					   			<nav id="mega-menu-holder" class="clearfix">
 								   <ul class="clearfix">
 									    <li class="active"><a href="index.html">Home</a></li>
-									    <li><a href="#">About</a>
-									    	<ul class="dropdown">
-									    		<li><a href="#">Company Profile</a></li>
-									    		<li><a href="#">Vision & Values</a></li>
-									    		<li><a href="#">Our Approach</a></li>
-									    		<li><a href="#">Industries We Serve</a></li>
-									    		<li><a href="#">Organization Chart</a></li>
-									    		<li><a href="#">Message From Chairman</a></li>
-									    		<li><a href="#">License & Certificates</a></li>
-									    		<li><a href="#">Awards</a></li>
-									       </ul>
-									    </li>
-									    <li><a href="why-us.html">Why Us ?</a></li>
-									    <li><a href="job-category.html">Job Category</a></li>
-									     <li><a href="gallery.html">Gallery</a></li>
-									    <li><a href="contact.html">contact</a></li>
+									  
+                                        @foreach($menus as $menu)
+                                            @php $submenus = $menu->childs; @endphp
+									        <li>
+                                                <a href="{{$menu->nav_name}}">{{$menu->caption}}</a>
+                                                <ul class="dropdown">
+                                                    @foreach($submenus as $sub)
+                                                        <li><a href="{{$sub->nav_name}}">{{$sub->caption}}</a></li>
+                                                    @endforeach
+									            </ul>
+                                            </li>
+									    @endforeach
 								   </ul>
 								</nav> <!-- /#mega-menu-holder -->
 					   		</div> <!-- /.menu-wrapper -->

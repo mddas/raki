@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\GlobalSetting;
 use App\Models\Navigation;
 use Illuminate\Http\Request;
 
@@ -8,6 +9,7 @@ class HomeController extends Controller
 {
     public function index(){
         $menus = Navigation::all()->where('nav_category','Main')->where('page_type','Group')->where('parent_page_id',0);
+        //return $menus->first()->submenus;
         $jobs = Navigation::query()->where('page_type','Job')->latest()->get();
         if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%about%")->where('page_type','Group')->latest()->first()!=null){
             $about_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%about%")->where('page_type','Group')->latest()->first()->id;
@@ -23,8 +25,16 @@ class HomeController extends Controller
         else{
             $banners = null;
         }
+        if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%slider%")->where('page_type','Group')->latest()->first()!=null){
+            $slider_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%slider%")->where('page_type','Group')->latest()->first()->id;
+            $sliders = Navigation::all()->where('parent_page_id',$slider_id);
+        }
+        else{
+            $sliders = "null";
+        }
         
-        return view("website.index")->with(['jobs'=>$jobs,'banners'=>$banners,'about'=>$About,'menus'=>$menus]);
+        $global_setting = GlobalSetting::all()->first();        
+        return view("website.index")->with(['jobs'=>$jobs,'banners'=>$banners,'about'=>$About,'menus'=>$menus,'global_setting'=>$global_setting,'sliders'=>$sliders]);
     }
     public function category($slug){
         $menus = Navigation::all()->where('nav_category','Main')->where('page_type','Group')->where('parent_page_id',0);
