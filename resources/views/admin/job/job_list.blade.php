@@ -90,11 +90,11 @@
                                                  data-id="{{$job->navigation->id ?? ''}}" {{($job->navigation->page_status == 1)?'checked':''}} />
                                         </td>
                                         <td>
-                                            <a href="#/admin/navigation-edit/{{$job->nav_category}}{{$job->navigation->id}}/edit"
+                                            <a href="{{route('jobedit',[$job->navigation->nav_category,$job->navigation->id])}}"
                                                title="edit" class="edit_btn">
                                                 <button class="btn btn-warning">Edit</button>
                                             </a>
-
+                                                <!----/admin/navigation-edit/{{$job->nav_category}}{{$job->navigation->id}}/edit--->
                                             <a href="/admin/navigation-list/{{$job->navigation->nav_category}}/{{$job->navigation->id}}/delete"
                                                        title="delete" class="delete_btn"
                                                        onclick="return confirm('Are you sure to delete ?');">

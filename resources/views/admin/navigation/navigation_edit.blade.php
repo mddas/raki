@@ -218,7 +218,7 @@
              <div id="parent_id_div" class="form-group col-md-12">
                 <label for="parent_page_id">Parent Navigation <i class="reqr">*</i></label>
                     <select class="form-control" name="parent_page_id">
-                        <option value="0" >----none-----</option>
+                        <option disabled >----none-----</option>
                         @foreach($categories as $c)
                             <option value="{{$c->id}}" <?php echo ($c->id == $navigation->parent_page_id)?'selected':'';?>>
                                 {{$c->nav_name}}

@@ -17,6 +17,7 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index');
 Route::prefix('admin')->group(function(){
+    
     Route::get('/','Auth\AdminLoginController@index');
     Route::post('/login','Auth\AdminLoginController@login')->name('login.submit');
     Route::get('/change_profile','AdminController@change_profile')->name('admin.change_profile');
@@ -83,7 +84,9 @@ Route::prefix('admin')->group(function(){
     Route::get('/job/{category}/create','JobController@AddJob')->name("AddJob");
     Route::post('/jobstore/{category}', 'JobController@store')->name("AddJob1");
     Route::post('/jobstore/{category}/{id}', 'JobController@store')->name("AddJob2");
-
+    Route::get('/jobedit/{category}/{id}', 'JobController@edit')->name("jobedit");
+    Route::post('/jobupdate/{category}/{id}','JobController@JobUpdate');
+    Route::get('/job/delete-banner-image/{category}/{id}/deleteimage3','JobController@deleteBannerImage')->name('deleteBannerImage');
     Route::get('/job-list', 'JobController@jobList')->name("joblist");
 
 });
