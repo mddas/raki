@@ -8,18 +8,19 @@
                     <div class="wrapper">
                         <div class="clearfix">
                             <div class="latest-news-slider">
+                                @foreach($job_categories as $cat)
                                 <div class="item">
                                     <div class="single-job">
                                         <div class="image-box">
                                             <img
-                                                src="/website/images/blog/1.jpg"
+                                                src="{{$cat->banner_image}}"
                                                 alt=""
                                             />
                                             <div class="overlay">
                                                 <a
-                                                    href="job-list.html"
+                                                    href="/#{{$cat->id}}"
                                                     class="date"
-                                                    >Security Company</a
+                                                    >{{$cat->caption}}</a
                                                 >
                                             </div>
                                         </div>
@@ -28,86 +29,7 @@
                                     <!-- /.job-category-single -->
                                 </div>
                                 <!-- /.col- -->
-                                <div class="item">
-                                    <div class="single-job">
-                                        <div class="image-box">
-                                            <img
-                                                src="/website/images/blog/2.jpg"
-                                                alt=""
-                                            />
-                                            <div class="overlay">
-                                                <a
-                                                    href="job-list.html"
-                                                    class="date"
-                                                    >Supermarket</a
-                                                >
-                                            </div>
-                                        </div>
-                                        <!-- /.image-box -->
-                                    </div>
-                                    <!-- /.job-category-single -->
-                                </div>
-                                <!-- /.col- -->
-                                <div class="item">
-                                    <div class="single-job">
-                                        <div class="image-box">
-                                            <img
-                                                src="/website/images/blog/3.jpg"
-                                                alt=""
-                                            />
-                                            <div class="overlay">
-                                                <a
-                                                    href="job-list.html"
-                                                    class="date"
-                                                    >Oil & Gas</a
-                                                >
-                                            </div>
-                                        </div>
-                                        <!-- /.image-box -->
-                                    </div>
-                                    <!-- /.job-category-single -->
-                                </div>
-                                <!-- /.col- -->
-                                <div class="item">
-                                    <div class="single-job">
-                                        <div class="image-box">
-                                            <img
-                                                src="/website/images/blog/4.jpg"
-                                                alt=""
-                                            />
-                                            <div class="overlay">
-                                                <a
-                                                    href="job-list.html"
-                                                    class="date"
-                                                    >Constructions Field</a
-                                                >
-                                            </div>
-                                        </div>
-                                        <!-- /.image-box -->
-                                    </div>
-                                    <!-- /.job-category-single -->
-                                </div>
-                                <!-- /.col- -->
-                                <div class="item">
-                                    <div class="single-job">
-                                        <div class="image-box">
-                                            <img
-                                                src="/website/images/blog/5.jpg"
-                                                alt=""
-                                            />
-                                            <div class="overlay">
-                                                <a
-                                                    href="job-list.html"
-                                                    class="date"
-                                                    >Hotels / Resorts</a
-                                                >
-                                            </div>
-                                        </div>
-                                        <!-- /.image-box -->
-                                    </div>
-                                    <!-- /.job-category-single -->
-                                </div>
-                                <!-- /.col- -->
+                                @endforeach
                             </div>
                             <!-- /.job-category -slider -->
                         </div>

@@ -13,28 +13,38 @@ class HomeController extends Controller
         $jobs = Navigation::query()->where('page_type','Job')->latest()->get();
         if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%about%")->where('page_type','Group')->latest()->first()!=null){
             $about_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%about%")->where('page_type','Group')->latest()->first()->id;
-            $About = Navigation::all()->where('parent_page_id',$about_id)->last();
+            $About = Navigation::query()->where('parent_page_id',$about_id)->latest()->first();
         }
         else{
             $About = null;
         }
         if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%banner%")->where('page_type','Group')->latest()->first()!=null){
             $banner_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%banner%")->where('page_type','Group')->latest()->first()->id;
-            $banners = Navigation::all()->where('parent_page_id',$banner_id);
+            $banners = Navigation::query()->where('parent_page_id',$banner_id)->latest()->get();
         }
         else{
             $banners = null;
         }
         if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%slider%")->where('page_type','Group')->latest()->first()!=null){
             $slider_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%slider%")->where('page_type','Group')->latest()->first()->id;
-            $sliders = Navigation::all()->where('parent_page_id',$slider_id);
+            $sliders = Navigation::query()->where('parent_page_id',$slider_id)->latest()->get();
         }
         else{
-            $sliders = "null";
+            $sliders = null;
         }
-        
+        if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%misson%")->where('page_type','Group')->latest()->first()!=null){
+            $misson_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%misson%")->where('page_type','Group')->latest()->first()->id;
+            $missons = Navigation::query()->where('parent_page_id',$misson_id)->latest()->get();
+            //return $misson;
+        }
+        else{
+            $misson = null;
+        }
+        //return $misson;
+        $job_categories = Navigation::all()->where('nav_category','Main')->where('page_type','Group')->where('banner_image','!=',null);
+        //sreturn $job_categories;
         $global_setting = GlobalSetting::all()->first();        
-        return view("website.index")->with(['jobs'=>$jobs,'banners'=>$banners,'about'=>$About,'menus'=>$menus,'global_setting'=>$global_setting,'sliders'=>$sliders]);
+        return view("website.index")->with(['jobs'=>$jobs,'banners'=>$banners,'about'=>$About,'menus'=>$menus,'global_setting'=>$global_setting,'sliders'=>$sliders,'missons'=>$missons,'job_categories'=>$job_categories]);
     }
     public function category($slug){
         $menus = Navigation::all()->where('nav_category','Main')->where('page_type','Group')->where('parent_page_id',0);
