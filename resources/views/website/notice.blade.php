@@ -15,11 +15,11 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="#061948">
 		<title>Raki International | WelCome and Namaste</title>
 		<!-- Favicon -->
-		<link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
+		<link rel="icon" type="image/png" sizes="56x56" href="/website/images/fav-icon/icon.png">
 		<!-- Main style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="/website/css/style.css">
 		<!-- responsive style sheet -->
-		<link rel="stylesheet" type="text/css" href="css/responsive.css">
+		<link rel="stylesheet" type="text/css" href="/website/css/responsive.css">
 
 
 	</head>
@@ -35,7 +35,7 @@
 			<header class="header-one">
 				<div class="top-header">
 					<div class="container clearfix">
-						<div class="logo float-left"><a href="index.html"><img src="images/logo/logo.png" alt=""></a></div>
+						<div class="logo float-left"><a href="index.html"><img src="/website/images/logo/logo.png" alt=""></a></div>
 						<div class="address-wrapper float-right">
 							<ul>
 								<li class="address">
@@ -388,7 +388,7 @@
 								<ul>
 									<li class="clearfix">
 										<a href="#">
-										<img src="images/blog/1.jpg" alt="" class="float-left">
+										<img src="/website/images/blog/1.jpg" alt="" class="float-left">
 										<div class="post float-left">
 											<h6>Security Company</h6>
 											<p>View Job</p>
@@ -397,7 +397,7 @@
 									</li>
 									<li class="clearfix">
 										<a href="#">
-										<img src="images/blog/2.jpg" alt="" class="float-left">
+										<img src="/website/images/blog/2.jpg" alt="" class="float-left">
 										<div class="post float-left">
 											<h6>Supermarket</h6>
 											<p>View Job</p>
@@ -406,7 +406,7 @@
 									</li>
 									<li class="clearfix">
 										<a href="#">
-										<img src="images/blog/3.jpg" alt="" class="float-left">
+										<img src="/website/images/blog/3.jpg" alt="" class="float-left">
 										<div class="post float-left">
 											<h6>Oil & Gas</h6>
 											<p>View Job</p>
@@ -415,7 +415,7 @@
 									</li>
 									<li class="clearfix">
 										<a href="#">
-										<img src="images/blog/4.jpg" alt="" class="float-left">
+										<img src="/website/images/blog/4.jpg" alt="" class="float-left">
 										<div class="post float-left">
 											<h6>Constructions Field</h6>
 											<p>View Job</p>
@@ -424,7 +424,7 @@
 									</li>
 									<li class="clearfix">
 										<a href="#">
-										<img src="images/blog/5.jpg" alt="" class="float-left">
+										<img src="/website/images/blog/5.jpg" alt="" class="float-left">
 										<div class="post float-left">
 											<h6>Hotels / Resorts</h6>
 											<p>View Job</p>
@@ -453,11 +453,11 @@
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-12">
 							<div class="partner-slider">
-								<div class="item"><img src="images/logo/p-1.png" alt=""></div>
-								<div class="item"><img src="images/logo/p-2.png" alt=""></div>
-								<div class="item"><img src="images/logo/p-3.png" alt=""></div>
-								<div class="item"><img src="images/logo/p-4.png" alt=""></div>
-								<div class="item"><img src="images/logo/p-5.png" alt=""></div>
+								<div class="item"><img src="/website/images/logo/p-1.png" alt=""></div>
+								<div class="item"><img src="/website/images/logo/p-2.png" alt=""></div>
+								<div class="item"><img src="/website/images/logo/p-3.png" alt=""></div>
+								<div class="item"><img src="/website/images/logo/p-4.png" alt=""></div>
+								<div class="item"><img src="/website/images/logo/p-5.png" alt=""></div>
 							</div>
 						</div>
 					</div>
@@ -538,29 +538,29 @@
 
     	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
     	<!-- jQuery -->
-		<script src="vendor/jquery.2.2.3.min.js"></script>
+		<script src="/website/vendor/jquery.2.2.3.min.js"></script>
 		<!-- Popper js -->
-		<script src="vendor/popper.js/popper.min.js"></script>
+		<script src="/website/vendor/popper.js/popper.min.js"></script>
 		<!-- Bootstrap JS -->
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/website/vendor/bootstrap/js/bootstrap.min.js"></script>
 		<!-- Camera Slider -->
 		<script src='vendor/Camera-master/scripts/jquery.mobile.customized.min.js'></script>
 	    <script src='vendor/Camera-master/scripts/jquery.easing.1.3.js'></script> 
 	    <script src='vendor/Camera-master/scripts/camera.min.js'></script>
 	    <!-- menu  -->
-		<script src="vendor/menu/src/js/jquery.slimmenu.js"></script>
+		<script src="/website/vendor/menu/src/js/jquery.slimmenu.js"></script>
 		<!-- WOW js -->
-		<script src="vendor/WOW-master/dist/wow.min.js"></script>
+		<script src="/website/vendor/WOW-master/dist/wow.min.js"></script>
 		<!-- owl.carousel -->
-		<script src="vendor/owl-carousel/owl.carousel.min.js"></script>
+		<script src="/website/vendor/owl-carousel/owl.carousel.min.js"></script>
 		<!-- js count to -->
-		<script src="vendor/jquery.appear.js"></script>
-		<script src="vendor/jquery.countTo.js"></script>
+		<script src="/website/vendor/jquery.appear.js"></script>
+		<script src="/website/vendor/jquery.countTo.js"></script>
 		<!-- Fancybox -->
-		<script src="vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+		<script src="/website/vendor/fancybox/dist/jquery.fancybox.min.js"></script>
 
 		<!-- Theme js -->
-		<script src="js/theme.js"></script>
+		<script src="/website/js/theme.js"></script>
 		</div> <!-- /.main-page-wrapper -->
 	</body>
 </html>

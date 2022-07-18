@@ -59,10 +59,10 @@
                                         @foreach($menus as $menu)
                                             @php $submenus = $menu->childs; @endphp
 									        <li>
-                                                <a href="{{$menu->nav_name}}">{{$menu->caption}}</a>
+                                                <a href="{{route('category',$menu->nav_name)}}">{{$menu->caption}}</a>
                                                 <ul class="dropdown">
                                                     @foreach($submenus as $sub)
-                                                        <li><a href="{{$sub->nav_name}}">{{$sub->caption}}</a></li>
+                                                        <li><a href="{{route('subcategory',[$menu->nav_name,$sub->nav_name])}}">{{$sub->caption}}</a></li>
                                                     @endforeach
 									            </ul>
                                             </li>
