@@ -1,4 +1,6 @@
 
+    @if($missons!=null)
+    
     <div class="section-spacing mission-sec bg-gray">
                 <div class="container">
                     <div class="row">
@@ -23,3 +25,4 @@
                     </div>
                 </div>
             </div>
+        @endphp
