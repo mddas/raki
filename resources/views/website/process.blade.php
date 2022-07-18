@@ -1,3 +1,4 @@
+     @if($process!=null)
      <div class="requirement-process section-spacing">
                 <div class="container">
                     <div class="theme-title-one">
@@ -20,3 +21,4 @@
                     </div>
                 </div>
             </div>
+        @endif

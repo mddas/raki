@@ -1,3 +1,4 @@
+   @if($message!=null)
    <div class="message-sec">
                 <div class="overlay">
                     <div class="container">
@@ -29,3 +30,4 @@
                 </div>
                 <!-- /.overlay -->
             </div>
+        @endif
