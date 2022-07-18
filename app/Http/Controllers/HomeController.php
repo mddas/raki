@@ -39,7 +39,7 @@ class HomeController extends Controller
             //return $misson;
         }
         else{
-            $misson = null;
+            $missons = null;
         }
         if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%message%")->where('page_type','Group')->latest()->first()!=null){
             $message_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%message%")->where('page_type','Group')->latest()->first()->id;
@@ -93,7 +93,7 @@ class HomeController extends Controller
             //return $misson;
         }
         else{
-            $misson = null;
+            $missons = null;
         }
         if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%message%")->where('page_type','Group')->latest()->first()!=null){
             $message_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%message%")->where('page_type','Group')->latest()->first()->id;
@@ -190,7 +190,7 @@ class HomeController extends Controller
             //return $misson;
         }
         else{
-            $misson = null;
+            $missons = null;
         }
         if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%message%")->where('page_type','Group')->latest()->first()!=null){
             $message_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%message%")->where('page_type','Group')->latest()->first()->id;
