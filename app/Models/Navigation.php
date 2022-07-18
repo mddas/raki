@@ -50,12 +50,16 @@ class Navigation extends Model
 
     public function parents()
     {
-        return $this->belongsTo('App\Models\Navigation','parent_page_id','id') ;
+        return $this->belongsTo('App\Models\Navigation','parent_page_id','id');
     }
     
     public function getRelatedNews(){
 		$news =  $this->hasMany(Navigation::class,'parent_page_id','id');//Navigation::all()->where('parent_page_id')->latest()->get();
         return $news->orderBy('created_at', 'desc');
 	}
+
+    public function getJob(){
+        return $this->belongsTo(Job::class,'id','navigation_id');//job class->navigation id to related with->job foreign id i.e navigation id.
+    }
  
 }

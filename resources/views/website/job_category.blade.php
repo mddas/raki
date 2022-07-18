@@ -18,7 +18,7 @@
                                             />
                                             <div class="overlay">
                                                 <a
-                                                    href="/#{{$cat->id}}"
+                                                    href="/{{$cat->nav_name}}"
                                                     class="date"
                                                     >{{$cat->caption}}</a
                                                 >

@@ -54,7 +54,7 @@
 					   		<div class="menu-wrapper float-left">
 					   			<nav id="mega-menu-holder" class="clearfix">
 								   <ul class="clearfix">
-									    <li class="active"><a href="index.html">Home</a></li>
+									    <li class="active"><a href="/">Home</a></li>
 									  
                                         @foreach($menus as $menu)
                                             @php $submenus = $menu->childs; @endphp
@@ -170,21 +170,20 @@
                                 <ul>
                                     <li>
                                         <i class="flaticon-direction-signs"></i>
-                                        Syuchatar, Kathmandu, Nepal
+                                       {{$global_setting->website_full_address}} , Kathmandu Nepal
                                     </li>
                                     <li>
                                         <i class="flaticon-multimedia-1"></i>
-                                        <a href="mailto:info@rakiint.com.np"
-                                            >info@rakiint.com.np</a
-                                        >
+                                        <a href="{{$global_setting->site_email}}">{{$global_setting->site_email}}</a>
+                        
                                     </li>
                                     <li>
                                         <i
                                             class="fa fa-phone"
                                             aria-hidden="true"
                                         ></i>
-                                        <a href="tel:015224502">01-5224502</a> /
-                                        <a href="tel:015224503">5224503</a>
+                                        <a href="tel:{{$global_setting->phone}}">{{$global_setting->phone}}</a> /
+                                        <a href="tel:{{$global_setting->phone_ne}}">{{$global_setting->phone_ne}}</a>
                                     </li>
                                 </ul>
                             </div>

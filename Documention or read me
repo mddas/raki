@@ -1,4 +1,6 @@
 1)slidder->group->slidder=slug
 2)about->group->about=slug
 3)misson->group->misson->slug
+4)message->group->message this is message from
+5)page_type = job for all job
 

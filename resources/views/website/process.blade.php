@@ -7,36 +7,14 @@
                     <div class="wrapper">
                         <div class="clearfix">
                             <div class="process-slider">
+                              @foreach($process as $proc)
                                 <div class="item">
                                     <div class="step-content">
-                                        <h4>STEP-1</h4>
-                                        <h6>THE ROLE</h6>
+                                        <h4>{{$proc->caption}}</h4>
+                                        <h6>{{$proc->short_content}}</h6>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="step-content">
-                                        <h4>STEP-2</h4>
-                                        <h6>THE Search</h6>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="step-content">
-                                        <h4>STEP-3</h4>
-                                        <h6>Selection Process</h6>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="step-content">
-                                        <h4>STEP-4</h4>
-                                        <h6>Reference3 Check</h6>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="step-content">
-                                        <h4>STEP-5</h4>
-                                        <h6>Placement & Trail</h6>
-                                    </div>
-                                </div>
+                               @endforeach                      
                             </div>
                         </div>
                     </div>
