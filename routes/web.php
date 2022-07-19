@@ -90,11 +90,11 @@ Route::prefix('admin')->group(function(){
     Route::get('/job-list', 'JobController@jobList')->name("joblist");
 
 });
-
+Route::get('/jobdetail/{jobslug}',[HomeController::class,'singlePage'])->name('single_job');
 Route::get('/{slug}',[HomeController::class,'category'])->name('category');
 Route::get('/{category}/{subcategory}',[HomeController::class,'subcategory'])->name('subcategory');
 
-Route::get('/page/{slug}',[HomeController::class,'singlePage'])->name('singlepage');
+//Route::get('/page/{slug}',[HomeController::class,'singlePage'])->name('singlepage');
 // Route::any('{alias}', [
 //     'as' => 'pages',
 //     'uses' => 'HomeController@inner_pages'

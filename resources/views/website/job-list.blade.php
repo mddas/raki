@@ -23,7 +23,7 @@
 									<div class="row">
 										<div class="col-sm-3">
 											<div class="img-box">
-												<img src="{{$job->banner_image}}" alt="">
+												<a href="{{route('single_job',$job->nav_name)}}"><img src="{{$job->banner_image}}" alt=""></a>
 											</div>
 										</div>
 										<div class="col-sm-5">
@@ -36,8 +36,8 @@
 										</div>
 										<div class="col-sm-4">
 											<div class="text">
-												<span class="job_company">Salary : MYR 1500 Monthly</span>
-												<span>Contract : 2 Year(s)</span>
+												<span class="job_company">Salary : MYR {{$job->getJob->salary ?? ''}} Monthly</span>
+												<span>Contract : {{$job->getJob->contract_time ?? ''}} Year(s)</span>
 												<a href="#" class="apply-button" target="_blank">Apply Now</a>
 											</div> <!-- /.text -->
 										</div>
