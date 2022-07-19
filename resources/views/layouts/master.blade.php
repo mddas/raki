@@ -42,7 +42,7 @@
 									<h6><a href="tel:015224502">{{$global_setting->phone}}</a>	/	<a href="tel:015224503">{{$global_setting->phone_ne}}</a></h6>
 									<p><a href="mailto:info@rakiint.com.np">{{$global_setting->site_email}}</a></p>
 								</li>
-								<li class="quotes"><a href="apply-form.html" target="_blank">Apply Now</a></li>
+								<li class="quotes"><a href="/contact" target="_blank">Apply Now</a></li>
 							</ul>
 						</div> <!-- /.address-wrapper -->
 					</div> <!-- /.container -->
@@ -68,6 +68,7 @@
 									            </ul>
                                             </li>
 									    @endforeach
+                                        <li class="active"><a href="/contact">Contact Us</a></li>
 								   </ul>
 								</nav> <!-- /#mega-menu-holder -->
 					   		</div> <!-- /.menu-wrapper -->
@@ -255,6 +256,8 @@
             <script src="/website/vendor/jquery.countTo.js"></script>
             <!-- Fancybox -->
             <script src="/website/vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+            <script type="text/javascript" src="vendor/contact-form/validate.js"></script>
+		    <script type="text/javascript" src="vendor/contact-form/jquery.form.js"></script>
 
             <!-- Theme js -->
             <script src="/website/js/theme.js"></script>

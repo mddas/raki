@@ -265,4 +265,15 @@ class HomeController extends Controller
         $menus = Navigation::all()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0);
         return view("website.job_detail_single_page")->with(['job'=>$job,'menus'=>$menus,'global_setting'=>$global_setting]);
     }
+    public function Contact(){
+        //$job =Navigation::all()->where('nav_name',$slug)->first();        
+        $global_setting = GlobalSetting::all()->first(); 
+        $menus = Navigation::all()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0);
+        return view("website.contact")->with(['menus'=>$menus,'global_setting'=>$global_setting]);
+    }
+    public function jobApply($slug){
+         $global_setting = GlobalSetting::all()->first(); 
+        $menus = Navigation::all()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0);
+        return view("website.contact")->with(['menus'=>$menus,'global_setting'=>$global_setting]);
+    }
 }

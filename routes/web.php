@@ -91,6 +91,10 @@ Route::prefix('admin')->group(function(){
 
 });
 Route::get('/jobdetail/{jobslug}',[HomeController::class,'singlePage'])->name('single_job');
+
+Route::get('/jobapply/{jobslug}',[HomeController::class,'jobApply'])->name('jobapply');
+
+Route::get('/contact',[HomeController::class,'Contact'])->name('contact');
 Route::get('/{slug}',[HomeController::class,'category'])->name('category');
 Route::get('/{category}/{subcategory}',[HomeController::class,'subcategory'])->name('subcategory');
 

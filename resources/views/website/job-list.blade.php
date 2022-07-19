@@ -38,7 +38,7 @@
 											<div class="text">
 												<span class="job_company">Salary : MYR {{$job->getJob->salary ?? ''}} Monthly</span>
 												<span>Contract : {{$job->getJob->contract_time ?? ''}} Year(s)</span>
-												<a href="#" class="apply-button" target="_blank">Apply Now</a>
+												<a href="/jobapply/{{$job->nav_name}}" class="apply-button" target="_blank">Apply Now</a>
 											</div> <!-- /.text -->
 										</div>
 									</div>

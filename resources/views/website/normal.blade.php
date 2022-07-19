@@ -6,7 +6,7 @@
 				<div class="container clearfix">
 					<h3 class="title">ROHAN GURUNG<br> <span>Chairman</span></h3>
 					<p>Our commitment is finding the right person for the right job as per the request of our valued clients around the world. We are focusing, ethical and fair recruitment procedures. We are always happy to provide our Services.</p>
-					<a href="apply-form.html" class="theme-button-one" target="_blank">Apply Now</a>
+					<a href="/contact" class="theme-button-one" target="_blank">Contact us</a>
 				</div>
 			</div> <!-- /.callout-banner -->
 
