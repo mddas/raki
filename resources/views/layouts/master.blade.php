@@ -20,6 +20,7 @@
 		<link rel="stylesheet" type="text/css" href="/website/css/style.css">
 		<!-- responsive style sheet -->
 		<link rel="stylesheet" type="text/css" href="/website/css/responsive.css">
+        <link rel="stylesheet" href='https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css'>
 
 	</head>
 
@@ -257,7 +258,36 @@
 
             <!-- Theme js -->
             <script src="/website/js/theme.js"></script>
-        </div>
-        <!-- /.main-page-wrapper -->
+            	<!-- gllery js -->
+	    <script src="/website/js/gallery/picturefill.min.js"></script>
+	    <script src="/website/js/gallery/lightgallery.js"></script>
+	    <script src="/website/js/gallery/lg-pager.js"></script>
+	    <script src="/website/js/gallery/lg-autoplay.js"></script>
+	    <script src="/website/js/gallery/lg-fullscreen.js"></script>
+	    <script src="/website/js/gallery/lg-zoom.js"></script>
+	    <script src="/website/js/gallery/lg-hash.js"></script>
+	    <script src="/website/js/gallery/lg-share.js"></script>
+        <script>
+        lightGallery(document.getElementById('lightgallery'));
+
+        $(function() {
+        var selectedClass = "";
+        $(".filter").click(function(){
+        selectedClass = $(this).attr("data-rel");
+        $("#lightgallery").fadeTo(100, 0.1);
+        $("#lightgallery div").not("."+selectedClass).fadeOut().removeClass('animation');
+        setTimeout(function() {
+        $("."+selectedClass).fadeIn().addClass('animation');
+        $("#lightgallery").fadeTo(300, 1);
+        }, 300);
+        });
+        });
+    	</script>
+	    <!--End gllery js -->
+        
+    
+    
+    </div>
+    <!-- /.main-page-wrapper -->
     </body>
 </html>
