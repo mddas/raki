@@ -164,11 +164,6 @@
                     <label for="short_content">Short Content</label>
                     <textarea class="form-control ckeditor" id="short_content"  name="short_content" rows="5" placeholder="Short Content" >{{$navigation->short_content}}</textarea>
                 </div>                
-
-                <div id="short_content_nepali_div" class="form-group col-md-12">
-                    <label for="short_content_nepali">Nepali Short Content</label>
-                    <textarea class="form-control ckeditor" id="short_content_nepali"  name="short_content_nepali" rows="5" placeholder="Short Content" >{{$navigation->short_content_nepali}}</textarea>
-                </div>
                 @endif
 
                 <div id="long_content_div" class="form-group col-md-12">
@@ -176,10 +171,6 @@
                     <textarea class="form-control ckeditor" id="long_content" name="long_content" rows="10" placeholder="Main Content">{{$navigation->long_content}}</textarea>
                 </div>
 
-                <div id="long_content_nepali_div" class="form-group col-md-12">
-                    <label for="long_content_nepali">Nepali Main Content</label>
-                    <textarea class="form-control ckeditor" id="long_content_nepali" name="long_content_nepali" rows="10" placeholder="Main Content">{{$navigation->long_content_nepali}}</textarea>
-                </div>
 
 
             <!-- <div id="photo_gallery_div" class="form-group col-md-12" style="display: none">
