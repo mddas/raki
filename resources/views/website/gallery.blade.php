@@ -18,6 +18,7 @@
 				gallery
 			============================================== 
 			-->
+			@if(isset($photos))
 			<section class="section-spacing">
 				<div class="container">
 					<div class="gallery-view">
@@ -26,7 +27,7 @@
 							@foreach($photos as $photo)
 								<div class="item col-md-3" data-src="{{$photo->banner_image}}" data-sub-html="{{$photo->caption}}">
 									<a href="">
-										<img src="/website/images/home/1.jpg" alt="{{$photo->caption}}"/>
+										<img src="{{$photo->banner_image}}" alt="{{$photo->caption}}"/>
 										<div class="gallery-overlay"><img src="/website/images/home/plus.png"></div>
 									</a>
 								</div>
@@ -36,6 +37,7 @@
 		            </div>
           		</div>
 			</section>
+		  @endif
         @include("website.company_success")
         @include("website.partner")
     @endsection

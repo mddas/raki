@@ -141,7 +141,8 @@ class HomeController extends Controller
         
         if($category_type == "Photo Gallery"){
             //return "return to page gallary";
-            return view("website.gallery")->with(['jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
+            $photos = Navigation::query()->where('parent_page_id',$category_id)->latest()->get();
+            return view("website.gallery")->with(['photos'=>$photos,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
         }
         elseif($category_type == "Job"){
             //return "return to view job";
