@@ -22,78 +22,16 @@
 				<div class="container">
 					<div class="gallery-view">
 		                <div class="row" id="lightgallery"> 
-		                    <div class="item col-md-3" data-src="/website/images/home/1.jpg" data-sub-html="<h4>Raki International Pvt. Ltd.</h4>">
-		                        <a href="">
-		                            <img src="/website/images/home/1.jpg" alt="Raki International Pvt. Ltd."/>
-		                            <div class="gallery-overlay"><img src="/website/images/home/plus.png"></div>
-		                        </a>
-		                    </div>
-		                    <div class="item col-md-3" data-src="/website/images/home/1.jpg" data-sub-html="<h4>Raki International Pvt. Ltd.</h4>">
-		                        <a href="">
-		                            <img src="/website/images/home/1.jpg" alt="Raki International Pvt. Ltd."/>
-		                            <div class="gallery-overlay"><img src="/website/images/home/plus.png"></div>
-		                        </a>
-		                    </div>
-		                    <div class="item col-md-3" data-src="/website/images/home/1.jpg" data-sub-html="<h4>Raki International Pvt. Ltd.</h4>">
-		                        <a href="">
-		                            <img src="/website/images/home/1.jpg" alt="Raki International Pvt. Ltd."/>
-		                            <div class="gallery-overlay"><img src="/website/images/home/plus.png"></div>
-		                        </a>
-		                    </div>
-		                    <div class="item col-md-3" data-src="/website/images/home/1.jpg" data-sub-html="<h4>Raki International Pvt. Ltd.</h4>">
-		                        <a href="">
-		                            <img src="/website/images/home/1.jpg" alt="Raki International Pvt. Ltd."/>
-		                            <div class="gallery-overlay"><img src="/website/images/home/plus.png"></div>
-		                        </a>
-		                    </div>
-		                    <div class="item col-md-3" data-src="/website/images/home/1.jpg" data-sub-html="<h4>Raki International Pvt. Ltd.</h4>">
-		                        <a href="">
-		                            <img src="/website/images/home/1.jpg" alt="Raki International Pvt. Ltd."/>
-		                            <div class="gallery-overlay"><img src="/website/images/home/plus.png"></div>
-		                        </a>
-		                    </div>
-		                    <div class="item col-md-3" data-src="/website/images/home/1.jpg" data-sub-html="<h4>Raki International Pvt. Ltd.</h4>">
-		                        <a href="">
-		                            <img src="/website/images/home/1.jpg" alt="Raki International Pvt. Ltd."/>
-		                            <div class="gallery-overlay"><img src="/website/images/home/plus.png"></div>
-		                        </a>
-		                    </div>
-		                    <div class="item col-md-3" data-src="/website/images/home/1.jpg" data-sub-html="<h4>Raki International Pvt. Ltd.</h4>">
-		                        <a href="">
-		                            <img src="/website/images/home/1.jpg" alt="Raki International Pvt. Ltd."/>
-		                            <div class="gallery-overlay"><img src="/website/images/home/plus.png"></div>
-		                        </a>
-		                    </div>
-		                    <div class="item col-md-3" data-src="/website/images/home/1.jpg" data-sub-html="<h4>Raki International Pvt. Ltd.</h4>">
-		                        <a href="">
-		                            <img src="/website/images/home/1.jpg" alt="Raki International Pvt. Ltd."/>
-		                            <div class="gallery-overlay"><img src="/website/images/home/plus.png"></div>
-		                        </a>
-		                    </div>
-		                    <div class="item col-md-3" data-src="/website/images/home/1.jpg" data-sub-html="<h4>Raki International Pvt. Ltd.</h4>">
-		                        <a href="">
-		                            <img src="/website/images/home/1.jpg" alt="Raki International Pvt. Ltd."/>
-		                            <div class="gallery-overlay"><img src="/website/images/home/plus.png"></div>
-		                        </a>
-		                    </div>
-		                    <div class="item col-md-3" data-src="/website/images/home/1.jpg" data-sub-html="<h4>Raki International Pvt. Ltd.</h4>">
-		                        <a href="">
-		                            <img src="/website/images/home/1.jpg" alt="Raki International Pvt. Ltd."/>
-		                            <div class="gallery-overlay"><img src="/website/images/home/plus.png"></div>
-		                        </a>
-		                    </div>
-		                    <div class="item col-md-3" data-src="/website/images/home/1.jpg" data-sub-html="<h4>Raki International Pvt. Ltd.</h4>">
-		                        <a href="">
-		                            <img src="/website/images/home/1.jpg" alt="Raki International Pvt. Ltd."/>
-		                            <div class="gallery-overlay"><img src="/website/images/home/plus.png"></div>
-		                        </a>
-		                    </div>
-		                    <div class="item col-md-3" data-src="/website/images/home/1.jpg" data-sub-html="<h4>Raki International Pvt. Ltd.</h4>">
-		                        <a href="">
-		                            <img src="/website/images/home/1.jpg" alt="Raki International Pvt. Ltd."/>
-		                            <div class="gallery-overlay"><img src="/website/images/home/plus.png"></div>
-		                        </a>
-		                    </div>
+							<!----gallary data----->
+							@foreach($photos as $photo)
+								<div class="item col-md-3" data-src="{{$photo->banner_image}}" data-sub-html="{{$photo->caption}}">
+									<a href="">
+										<img src="/website/images/home/1.jpg" alt="{{$photo->caption}}"/>
+										<div class="gallery-overlay"><img src="/website/images/home/plus.png"></div>
+									</a>
+								</div>
+							@endforeach
+						  <!----gallary data close----->
 		                </div>
 		            </div>
           		</div>

@@ -26,7 +26,7 @@ class HomeController extends Controller
         }
         else{
             $banners = null;
-        }
+        } 
         if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%slider%")->where('page_type','Group')->latest()->first()!=null){
             $slider_id = Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%slider%")->where('page_type','Group')->latest()->first()->id;
             $sliders = Navigation::query()->where('parent_page_id',$slider_id)->latest()->get();
