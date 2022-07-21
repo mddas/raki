@@ -14,7 +14,7 @@
 			@if($message!=null)
 				<div class="callout-banner">
 				<div class="container clearfix">
-					<h3 class="title">{{$message->caption}}<br> <span>Chairman</span></h3>
+					<h3 class="title">{{$message->caption}}<br> <!---<span>Chairman</span>----></h3>
 					<p>{{$message->short_content}}</p>
 					<a href="/contact" class="theme-button-one" target="_blank">Contact us</a>
 				</div>
