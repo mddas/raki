@@ -153,7 +153,9 @@ class HomeController extends Controller
             return view("website.notice")->with(['jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
         }
         elseif($category_type == "Normal"){
-            return view("website.normal")->with(['jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
+            //return $category_id;
+            $normal = Navigation::find($category_id);
+            return view("website.normal")->with(['normal'=>$normal,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
         }
         else{
             return redirect('/');

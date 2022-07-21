@@ -72,10 +72,7 @@
                     <input class="form-control {{ $errors->has('caption_nepali') ? 'has-error' : '' }}" type="text" id="caption_nepali" name="caption_nepali" placeholder="Icon Class" value="{{$navigation->caption_nepali}}" required="required">
                 </div> 
                 @else
-                <div class="form-group col-md-6">
-                    <label for="caption_nepali">Nepali Caption <i class="reqr">*</i> (Page/Navigation Title)</label>
-                    <input class="form-control {{ $errors->has('caption_nepali') ? 'has-error' : '' }}" type="text" id="caption_nepali" name="caption_nepali" placeholder="Nepali Caption" value="{{$navigation->caption_nepali}}" required="required">
-                </div> 
+               
                 @endif
 
                 @if($navigation->link || $navigation->page_type == 'Link')
