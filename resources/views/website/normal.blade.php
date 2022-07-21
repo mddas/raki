@@ -34,7 +34,7 @@
 								<h2>{{$normal->caption}}</h2>
 							</div> <!-- /.theme-title-one -->
 							<p class="mb-20">{{$normal->short_content}}</p>
-							<p>{{$normal->main_content}}</p>
+							<p>{{$normal->long_content}}</p>
 						</div> <!-- /.col- -->
 						<div class="col-lg-6 col-12 order-lg-first">
 							<img src="{{$normal->banner_image}}" alt="" class="left-img">
