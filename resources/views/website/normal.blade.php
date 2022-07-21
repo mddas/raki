@@ -1,6 +1,6 @@
 @extends('layouts.master')
     @section("contents")
-        @include("website.main_slider")
+        <!-- @include("website.main_slider") -->
 		  @php 
 			if(app\Models\Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%message%")->where('page_type','Group')->latest()->first()!=null){
 				$message_id = app\Models\Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%message%")->where('page_type','Group')->latest()->first()->id;
@@ -11,7 +11,7 @@
         }
 		  @endphp
 			<!-------common page------>
-			@if($message!=null)
+			@if($message=="block")
 				<div class="callout-banner">
 				<div class="container clearfix">
 					<h3 class="title">{{$message->caption}}<br> <!---<span>Chairman</span>----></h3>
