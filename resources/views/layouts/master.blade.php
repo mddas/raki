@@ -1,3 +1,6 @@
+@php
+    $global_setting = app\Models\GlobalSetting::all()->first();
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -13,9 +16,9 @@
 		<meta name="msapplication-navbutton-color" content="#061948">
 		<!-- iOS Safari -->
 		<meta name="apple-mobile-web-app-status-bar-style" content="#061948">
-		<title>Raki International | WelCome and Namaste</title>
+		<title>{{$global_setting->page_title ?? 'Raki International | WelCome and Namaste'}}</title>
 		<!-- Favicon -->
-		<link rel="icon" type="image/png" sizes="56x56" href="/website/images/fav-icon/icon.png">
+		<link rel="icon" type="image/png" sizes="56x56" href="{{$global_setting->favicon}}">
 		<!-- Main style sheet -->
 		<link rel="stylesheet" type="text/css" href="/website/css/style.css">
 		<!-- responsive style sheet -->
@@ -29,7 +32,7 @@
 			<header class="header-one">
 				<div class="top-header">
 					<div class="container clearfix">
-						<div class="logo float-left"><a href="/"><img src="uploads/icons/{{$global_setting->site_logo}}" alt=""></a></div>
+						<div class="logo float-left"><a href="/"><img src="/uploads/icons/{{$global_setting->site_logo}}" alt=""></a></div>
 						<div class="address-wrapper float-right">
 							<ul>
 								<li class="address">
@@ -87,10 +90,10 @@
 					   			<ul>
 					   				<li class="social-icon">
 					   					<ul>
-											<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-											<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-											<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-											<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+											<li><a href="{{$global_setting->facebook}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+											<li><a href="{{$global_setting->twitter}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+											<li><a href="{{$global_setting->linkedin}}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+											<li><a href="{{$global_setting->other}}" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
 										</ul>
 					   				</li>
 					   			</ul>

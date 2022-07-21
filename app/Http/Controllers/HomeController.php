@@ -151,7 +151,10 @@ class HomeController extends Controller
         }
         elseif($category_type == "Notice"){
             // return "return to view Notice";
-            return view("website.notice")->with(['jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
+            $notices = Navigation::query()->where('parent_page_id',$category_id)->latest()->get();
+            $notice_heading = Navigation::find('parent_page_id');
+            // return $notice_heading;
+            return view("website.notice")->with(['notices'=>$notices,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
         }
         elseif($category_type == "Normal"){
             //return $category_id;
@@ -262,7 +265,10 @@ class HomeController extends Controller
         }
         elseif($subcategory_type == "Notice"){
             // return "return to view Notice";
-            return view("website.notice")->with(['jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
+            $notices = Navigation::query()->where('parent_page_id',$subcategory_id)->where('page_type','Notice')->latest()->get();
+            $notice_heading = Navigation::find($subcategory_id);
+            //return $notice_heading;
+            return view("website.notice")->with(['notice_heading'=>$notice_heading,'notices'=>$notices,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
         }
         elseif($subcategory_type == "Normal"){
             $normal = Navigation::find($subcategory_id);

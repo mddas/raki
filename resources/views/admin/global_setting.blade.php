@@ -56,6 +56,29 @@
                            placeholder="Address Nepali" value="{{$global_setting->address_ne}}">
                 </div>
                 <div class="form-group col-md-6">
+                    <label for="facebook">facebook link</label>
+                    <input type="text" id="facebook" name="facebook" class="form-control"
+                           placeholder="facebook link" value="{{$global_setting->facebook}}">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="Twitter">Twitter Url</label>
+                    <input type="text" id="page_keyword" name="twitter" class="form-control"
+                           placeholder="Twitter" value="{{$global_setting->twitter}}">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="LinkedIn">LinkedIn url</label>
+                    <input type="text" id="LinkedIn" name="linkedin" class="form-control"
+                           placeholder="LinkedIn" value="{{$global_setting->linkedin}}">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="other">Other Link</label>
+                    <input type="text" id="other" name="page_keyword" class="form-control"
+                           placeholder="Other Link" value="{{$global_setting->other}}">
+                </div>
+                <div class="form-group col-md-6">
                     <label for="page_title">Page Title</label>
                     <input type="text" id="page_title" name="page_title" class="form-control" placeholder="Page Title"
                            value="{{$global_setting->page_title}}">
