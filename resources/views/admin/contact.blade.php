@@ -30,15 +30,15 @@
 						<div class="col-lg-5 col-12"><div class="img-box"></div></div>
 						<div class="col-lg-7 col-12">
 							<div class="form-wrapper">
-								<form action="inc/sendemail.php" class="theme-form-one form-validation" autocomplete="off">
-									<div class="row">
+								<form action="{{route('contactstore')}}" method="POST" class="theme-form-one form-validation" autocomplete="on" enctype='multipart/form-data'>
+									 @csrf	
+								<div class="row">
 										<div class="col-sm-6 col-12"><input type="text" placeholder="Name *" name="name"></div>
-										<div class="col-sm-6 col-12"><input type="text" placeholder="Phone *" name="phone"></div>
+										<div class="col-sm-6 col-12"><input type="text" placeholder="Phone *" name="number"></div>
 										<div class="col-sm-6 col-12"><input type="email" placeholder="Email *" name="email"></div>
-										<div class="col-sm-6 col-12"><input type="text" placeholder="Website *" name="web"></div>
 										<div class="col-12"><textarea placeholder="Message" name="message"></textarea></div>
 									</div> <!-- /.row -->
-									<button class="theme-button-one">SEND MESSAGE</button>
+									<button type="submit" class="theme-button-one">Submit</button>
 								</form>
 							</div> <!-- /.form-wrapper -->
 						</div> <!-- /.col- -->

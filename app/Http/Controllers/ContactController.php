@@ -10,6 +10,11 @@ use App\Mail\BookMail;
 use App\Mail\ResponseMail;
 use App\Models\Comment;
 use App\Models\GlobalSetting;
+use Session;
+use App\Models\Navigation;
+use App\Job;
+use App\Contact;
+
 use Mail;
 
 class ContactController extends Controller
@@ -47,6 +52,55 @@ class ContactController extends Controller
         }
         }
         // return redirect()->back()->with('error',"Feedback Message failed. Try Again Later");
+    }
+    public function Contact(){
+       //$job =Navigation::all()->where('nav_name',$slug)->first();        
+        $global_setting = GlobalSetting::all()->first(); 
+        $menus = Navigation::all()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0);
+        return view("admin.contact")->with(['menus'=>$menus,'global_setting'=>$global_setting]);
+    }
+    public function jobApply($slug){
+        $global_setting = GlobalSetting::all()->first(); 
+        $menus = Navigation::all()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0);
+        return view("admin.apply")->with(['menus'=>$menus,'global_setting'=>$global_setting,'job_slug'=>$slug]);
+    }
+    public function ContactStore(Request $req){
+        $validated = $req->validate([
+            'name' => 'required',
+            'number' => 'required',
+         ]);
+
+         if($req->file('file')){
+            $img_file = $req->file('file');
+            $name = time().'_'.$img_file->getClientOriginalName();
+            $destinationPath = public_path('contact_image');
+            $img_file->move($destinationPath,$name);
+         }
+         else{
+             $name = null;
+         }
+
+        $contact = new Contact;
+        $contact->name = $req['name'];
+        $contact->number = $req['number'];
+        $contact->email = $req['email'];
+        $contact->file = $name;
+        $contact->message = $req['message'];
+        $contact->job_id = $req['job_id'];
+        $contact->save();
+        if($contact){
+            Session::flash('contact', 'Thanks for submitting'); 
+            return redirect('/');
+        }
+        else{
+            Session::flash('contact_error', 'Sorry form submitted failed'); 
+            return redirect('/');
+        }
+
+    }
+    public function Destroy($slug){
+        $contact = Contact::where('nav_name',$slug)->delete();
+        return redirect('/');
     }
 
    

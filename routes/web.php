@@ -12,6 +12,7 @@
 */
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\ContactController;
 
 Auth::routes();
 
@@ -90,11 +91,12 @@ Route::prefix('admin')->group(function(){
     Route::get('/job-list', 'JobController@jobList')->name("joblist");
 
 });
-Route::get('/jobdetail/{jobslug}',[HomeController::class,'singlePage'])->name('single_job');
+Route::POST('jobapply/store/{slug}',[ContactController::class,'ContactStore'])->name('storeapply');
+Route::get('/jobdetail/{jobslug}',[ContactController::class,'singlePage'])->name('single_job');
+Route::get('/jobapply/{jobslug}',[ContactController::class,'jobApply'])->name('jobapply');
+Route::get('/contact',[ContactController::class,'Contact'])->name('contact');
+Route::POST('contact/store',[ContactController::class,'ContactStore'])->name('contactstore');
 
-Route::get('/jobapply/{jobslug}',[HomeController::class,'jobApply'])->name('jobapply');
-
-Route::get('/contact',[HomeController::class,'Contact'])->name('contact');
 Route::get('/{slug}',[HomeController::class,'category'])->name('category');
 Route::get('/{category}/{subcategory}',[HomeController::class,'subcategory'])->name('subcategory');
 

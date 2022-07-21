@@ -287,8 +287,16 @@
         });
     	</script>
 	    <!--End gllery js -->
-        
-    
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            @if(Session::has('contact'))
+            <script>
+                Swal.fire(
+                    'Thanks!',
+                     "Form submitted sucessfully!!!",
+                    'success'
+                    )
+            </script>
+        @endif
     
     </div>
     <!-- /.main-page-wrapper -->

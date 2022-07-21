@@ -1,6 +1,7 @@
 @extends('layouts.master')
     @section("contents")
         @include("website.main_slider")
+    
         @include("website.about_company")
         @include("website.our_misson")
         @include("website.job_category")
