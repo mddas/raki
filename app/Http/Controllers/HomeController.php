@@ -10,7 +10,7 @@ use App\Job;
 class HomeController extends Controller
 {
     public function index(){
-        $menus = Navigation::all()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0);
+        $menus = Navigation::query()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0)->where('page_status','1')->orderBy('position','ASC')->get();
         //return $menus;
         //return $menus->first()->submenus;
         $jobs = Navigation::query()->where('page_type','Job')->latest()->get();
@@ -66,7 +66,7 @@ class HomeController extends Controller
     }
     public function category($menu){
         //return $menu." this is category";
-        $menus = Navigation::all()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0);
+        $menus = Navigation::query()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0)->where('page_status','1')->orderBy('position','ASC')->get();
         //return $menus->first()->submenus;
         $jobs = Navigation::query()->where('page_type','Job')->latest()->get();
         if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%about%")->where('page_type','Group')->latest()->first()!=null){
@@ -171,7 +171,7 @@ class HomeController extends Controller
 
   public function subcategory($slug1,$submenu){
         //return $menu."::".$submenu;
-        $menus = Navigation::all()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0);
+        $menus = Navigation::query()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0)->where('page_status','1')->orderBy('position','ASC')->get();
         //return $menus->first()->submenus;
         $jobs = Navigation::query()->where('page_type','Job')->latest()->get();
         if(Navigation::query()->where('nav_category','Home')->where('nav_name', 'LIKE', "%about%")->where('page_type','Group')->latest()->first()!=null){
