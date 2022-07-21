@@ -63,7 +63,17 @@
                                                 <a href="{{route('category',$menu->nav_name)}}">{{$menu->caption}}</a>
                                                 <ul class="dropdown">
                                                     @foreach($submenus as $sub)
-                                                        <li><a href="{{route('subcategory',[$menu->nav_name,$sub->nav_name])}}">{{$sub->caption}}</a></li>
+                                                        <li>
+                                                            <a href="{{route('subcategory',[$menu->nav_name,$sub->nav_name])}}">{{$sub->caption}}</a>
+                                                             @php $subsubmenus = $sub->childs; @endphp
+                                                             @if($subsubmenus->count()>0)
+                                                             <ul class="dropdown" style="margin-left:160px;">
+                                                                @foreach($subsubmenus as $subsub)
+                                                                        <li><a>{{$subsub->caption}}</a><li>
+                                                                @endforeach
+                                                              </ul>
+                                                              @endif
+                                                        </li>
                                                     @endforeach
 									            </ul>
                                             </li>

@@ -237,7 +237,13 @@ class HomeController extends Controller
                 $subcategory_type = Navigation::all()->where('parent_page_id',$subcategory_id)->first()->page_type;//slug/slug2(GROUP)
             }
             else{
-                $subcategory_type = Navigation::all()->where('nav_name',$submenu)->where('page_type','Normal')->first()->page_type;//slug/slug2(not group)
+                //return Navigation::all()->where('nav_name',$submenu)->where('page_type','Normal')->first()->page_type;
+                if(Navigation::all()->where('nav_name',$submenu)->where('page_type','Normal')->count()>0){
+                    $subcategory_type = Navigation::all()->where('nav_name',$submenu)->where('page_type','Normal')->first()->page_type;//slug/slug2(group)
+                }
+                else{
+                    return redirect('/');//submenu is page_type=Group and its internal items are empty
+                }
             }
            
          }
@@ -247,6 +253,7 @@ class HomeController extends Controller
         
         if($subcategory_type == "Photo Gallery"){
             //return "return to page gallary";
+            $photos = Navigation::query()->where('parent_page_id',$subcategory_id)->latest()->get();
             return view("website.gallery")->with(['jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
         }
         elseif($subcategory_type == "Job"){
@@ -258,7 +265,8 @@ class HomeController extends Controller
             return view("website.notice")->with(['jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
         }
         elseif($subcategory_type == "Normal"){
-            return view("website.normal")->with(['jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
+            $normal = Navigation::find($subcategory_id);
+            return view("website.normal")->with(['normal'=>$normal,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
         }
         elseif($subcategory_type == "Group"){
             //return "return to job else";
