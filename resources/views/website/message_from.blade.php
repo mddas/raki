@@ -12,7 +12,7 @@
                                     {{$message->short_content}}
                                 </p>
                                 <a
-                                    href="#"
+                                    href="{{route('readmore',$message->id)}}"
                                     class="theme-button-one white-outline"
                                     >Read More</a
                                 >
