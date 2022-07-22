@@ -61,7 +61,7 @@
 									@foreach($menus as $menu)
 										<li class="clearfix">
 											<a href="#">
-											<img src="/website/images/home/3.jpg" alt="" class="float-left">
+											<img src="{{$menu->banner_image}}" alt="" class="float-left">
 											<div class="post float-left">
 												<h6>{{$menu->caption}}</h6>
 												<p>View Job</p>
