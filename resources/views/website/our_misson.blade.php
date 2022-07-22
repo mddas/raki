@@ -8,12 +8,9 @@
                         @if($key<=2) 
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="mission-box">
-                                <h3>Our Mission</h3>
+                                <h3>{{$misson->caption}}</h3>
                                 <p>
-                                    Our Vision is to lead in the creation and
-                                    delivery of innovative workforce solutions
-                                    and services that eanable our clients to win
-                                    in the changing world of work.
+                                    {{$misson->short_content}}
                                 </p>
                                 <a href="#">Read More +</a>
                             </div>
