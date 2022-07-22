@@ -5,6 +5,7 @@ use App\Job;
 use App\Models\Navigation;
 use Illuminate\Http\Request;
 use App\Models\NavigationItems;
+use  App\Contact;
 use Session;
 use File;
 
@@ -267,9 +268,23 @@ class JobController extends Controller
 
 
     public function edit($slug1,$slug2){
-        $job = job::all()->where('navigation_id',$slug2)->first();
+        $job = Job::all()->where('navigation_id',$slug2)->first();
         $categories = Navigation::where('page_type','Group')->where('parent_page_id',0)->get();
         return view('admin.job.job_edit')->with(['job'=>$job,'category'=>'/'.$slug1.'/'.$slug2,'categories'=>$categories,'category_name'=>$slug1,"category_id"=>$slug2]);
+    }
+
+    public function AppliedJob(){
+        //$navigations  = Navigation::where('page_type','Job')->orderBy('position','ASC')->get();
+        $contacts = Contact::all();
+        //return $jobs;
+        //return $jobs->navigation;
+        $categories = Navigation::where('page_type','Group')->where('parent_page_id',0)->get();
+        //return $navigations;
+        return view('admin.job.applied_job_list', compact('contacts','categories'));
+    }
+    public function Contactelete($slug){
+        Contact::find($slug)->delete();
+        return redirect()->back();
     }
   
 }
