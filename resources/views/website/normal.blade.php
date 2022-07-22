@@ -36,9 +36,9 @@
 			</style>
 			<div class="about-compnay section-spacing">
 				<div class="container">
+					<center><h3><u>{{$normal->caption}}</u></h3></center>
 					<div class="row">
 						<div class="col-lg-12 col-12">
-							<center><h3><u>{{$normal->caption}}</u></h3></center>
 							<div class="wrapingimage">   
 								<img src="{{$normal->banner_image}}" alt="" class="left-img">
 							</div>
