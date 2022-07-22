@@ -50,7 +50,7 @@
 				</div> <!-- /.container -->
 			</div> <!-- /.about-compnay-two -->
 			<!------common page end----->
-        <!-- @include("website.company_success") -->
+         @include("website.company_success")
         @include("website.partner")
     @endsection
     
