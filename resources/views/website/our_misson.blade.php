@@ -12,7 +12,7 @@
                                 <p>
                                     {{$misson->short_content}}
                                 </p>
-                                <a href="#">Read More +</a>
+                                <a href="{{route('readmore',$misson->id)}}">Read More +</a>
                             </div>
                         </div>
                         @else

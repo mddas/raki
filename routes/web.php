@@ -91,6 +91,8 @@ Route::prefix('admin')->group(function(){
     Route::get('/job-list', 'JobController@jobList')->name("joblist");
 
 });
+Route::POST('read-more/{slug}',[HomeController::class,'ReadMore'])->name('readmore');
+
 Route::POST('jobapply/store/{slug}',[ContactController::class,'ContactStore'])->name('storeapply');
 Route::get('/jobdetail/{jobslug}',[ContactController::class,'singlePage'])->name('single_job');
 Route::get('/jobapply/{jobslug}',[ContactController::class,'jobApply'])->name('jobapply');
