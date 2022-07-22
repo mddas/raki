@@ -68,7 +68,17 @@
 											</div>
 											</a>
 										</li>
-									@endforeach
+										@foreach($menu->child as $sub)
+											<li class="clearfix">
+												<a href="#">
+												<img src="{{$sub->banner_image}}" alt="" class="float-left">
+												<div class="post float-left">
+													<h6>{{$sub->caption}}</h6>
+													<p>View Job</p>
+												</div>
+												</a>
+											</li>
+										@endforeach
 									<!---category list closed---->
 								</ul>
 							</div> <!-- /.sidebar-recent-post -->
