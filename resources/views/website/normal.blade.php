@@ -45,15 +45,11 @@
 							 <!-- /.theme-title-one -->
 							<p class="mb-20">{{$normal->short_content}}</p>
 							@php echo $normal->long_content; @endphp
-						</div> <!-- /.col- -->
-						<!-- <div class="col-lg-6 col-12 order-lg-first">
-							<img src="s{{$normal->banner_image}}" alt="" class="left-img">
-						</div> -->
+						</div> 
 					</div> <!-- /.row -->
 				</div> <!-- /.container -->
 			</div> <!-- /.about-compnay-two -->
 			<!------common page end----->
-        <!-- @include("website.company_success") -->
         @include("website.partner")
     @endsection
     
