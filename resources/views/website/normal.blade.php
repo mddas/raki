@@ -39,9 +39,11 @@
 					<center><h3><u>{{$normal->caption}}</u></h3></center>
 					<div class="row">
 						<div class="col-lg-12 col-12">
+							@if($normal->banner_image!=null)
 							<div class="wrapingimage">   
 								<img src="{{$normal->banner_image}}" class="left-img" onerror="this.style.display='none'">
 							</div>
+							@endif
 							 <!-- /.theme-title-one -->
 							<p class="mb-20">{{$normal->short_content}}</p>
 							@php echo $normal->long_content; @endphp
