@@ -81,7 +81,7 @@ Route::prefix('admin')->group(function(){
     Route::get('/comment-status/{id}', 'Admin\CommentController@updatestatus');
 
 //................................customized my MD for Job.............
-    Route::get('/contact/{slug}',[JobController::class,'Contactelete'])->name('contactDelete');
+    Route::get('/contact/{slug}',[ContactController::class,'Contactelete'])->name('contactDelete');
     Route::get('/job/{category}/{id}/create','JobController@AddJob')->name("AddJob");
     Route::get('/job/{category}/create','JobController@AddJob')->name("AddJob");
     Route::post('/jobstore/{category}', 'JobController@store')->name("AddJob1");
@@ -90,7 +90,7 @@ Route::prefix('admin')->group(function(){
     Route::post('/jobupdate/{category}/{id}','JobController@JobUpdate');
     Route::get('/job/delete-banner-image/{category}/{id}/deleteimage3','JobController@deleteBannerImage')->name('deleteBannerImage');
     Route::get('/job-list', 'JobController@jobList')->name("joblist");
-    Route::get('/applied-job-list', 'JobController@AppliedJob')->name("AppliedJob");
+    Route::get('/applied-job-list', 'ContactController@AppliedJob')->name("AppliedJob");
 
 });
 Route::get('read-more/{slug}',[HomeController::class,'ReadMore'])->name('readmore');

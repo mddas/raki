@@ -72,7 +72,7 @@ class ContactController extends Controller
 
          if($req->file('file')){
             $img_file = $req->file('file');
-            $name = time().'_'.$img_file->getClientOriginalName();
+            $name = "/contact_image/".time().'_'.$img_file->getClientOriginalName();
             $destinationPath = public_path('contact_image');
             $img_file->move($destinationPath,$name);
          }
@@ -101,6 +101,20 @@ class ContactController extends Controller
     public function Destroy($slug){
         $contact = Contact::where('nav_name',$slug)->delete();
         return redirect('/');
+    }
+
+    public function AppliedJob(){
+        //$navigations  = Navigation::where('page_type','Job')->orderBy('position','ASC')->get();
+        $contacts = Contact::all();
+        //return $jobs;
+        //return $jobs->navigation;
+        $categories = Navigation::where('page_type','Group')->where('parent_page_id',0)->get();
+        //return $navigations;
+        return view('admin.job.applied_job_list', compact('contacts','categories'));
+    }
+    public function Contactelete($slug){
+        Contact::find($slug)->delete();
+        return redirect()->back();
     }
 
    
