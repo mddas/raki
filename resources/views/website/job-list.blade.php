@@ -58,7 +58,7 @@
 								<h5 class="title">Job Categorey</h5>
 								<ul>
 									<!----category List---->
-									@foreach($menus as $menu)
+									@foreach($menus->where('banner_image','!=',null) as $menu)
 										<li class="clearfix">
 											<a href="#">
 											<img src="{{$menu->banner_image}}" alt="" class="float-left">
