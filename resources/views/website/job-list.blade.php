@@ -47,14 +47,13 @@
 							<!---total job of category displayed here------>
 						</div> <!-- /.Job -->
 						<div class="col-xl-3 col-lg-4 col-md-4 col-sm-5 col-12 blog-sidebar">
-							<div class="sidebar-container sidebar-categories">
+							<!-- <div class="sidebar-container sidebar-categories">
 								<ul>
-									<li><a href="#">Why Us?</a></li>
-									<li><a href="#">Abou Top Job</a></li>
-									<li><a href="#">Message From Chairman</a></li>
-									<li><a href="#">Recruitment Process</a></li>
+									@foreach($menus as $menu)
+										<li><a href="#">$menu->caption</a></li>
+									@endforeach
 								</ul>
-							</div> <!-- /.sidebar-categories -->
+							</div> /.sidebar-categories -->
 							<div class="sidebar-container sidebar-recent-post">
 								<h5 class="title">Job Categorey</h5>
 								<ul>
@@ -64,7 +63,7 @@
 											<a href="#">
 											<img src="/website/images/home/3.jpg" alt="" class="float-left">
 											<div class="post float-left">
-												<h6>Constructions</h6>
+												<h6>{{$menu->caption}}</h6>
 												<p>View Job</p>
 											</div>
 											</a>
