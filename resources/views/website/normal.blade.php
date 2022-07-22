@@ -40,7 +40,7 @@
 					<div class="row">
 						<div class="col-lg-12 col-12">
 							<div class="wrapingimage">   
-								<img src="{{$normal->banner_image}}" alt="" class="left-img" onerror="this.style.display='none'">
+								<img src="{{$normal->banner_image}}" class="left-img" onerror="this.style.display='none'">
 							</div>
 							 <!-- /.theme-title-one -->
 							<p class="mb-20">{{$normal->short_content}}</p>
