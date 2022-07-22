@@ -109,8 +109,6 @@
 					</div>
 				</div> <!-- /.container -->
 			</div> <!-- /.faq-page -->
-
-    <!-- @include("website.company_success") -->
     @include("website.partner")
 @endsection
     
