@@ -56,7 +56,7 @@ class ContactController extends Controller
     public function Contact(){
        //$job =Navigation::all()->where('nav_name',$slug)->first();        
         $global_setting = GlobalSetting::all()->first(); 
-        $menus = Navigation::all()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0);
+        $menus = Navigation::query()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0)->where('page_status','1')->orderBy('position','ASC')->get();
         return view("admin.contact")->with(['menus'=>$menus,'global_setting'=>$global_setting]);
     }
     public function jobApply($slug){
