@@ -68,7 +68,11 @@
 											</div>
 											</a>
 										</li>
-										@foreach($menu->child as $sub)
+										@php
+											$submenus  = $menu->childs;
+											
+										@endphp
+										@foreach($submenus as $sub)
 											<li class="clearfix">
 												<a href="#">
 												<img src="{{$sub->banner_image}}" alt="" class="float-left">
@@ -79,6 +83,7 @@
 												</a>
 											</li>
 										@endforeach
+									@endforeach
 									<!---category list closed---->
 								</ul>
 							</div> <!-- /.sidebar-recent-post -->
