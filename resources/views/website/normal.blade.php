@@ -38,11 +38,10 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-12 col-12">
+							<center><h3><u>{{$normal->caption}}</u></h3></center>
 							<div class="wrapingimage">   
 								<img src="{{$normal->banner_image}}" alt="" class="left-img">
 							</div>
-							
-								<h3><u>{{$normal->caption}}</u></h3>
 							 <!-- /.theme-title-one -->
 							<p class="mb-20">{{$normal->short_content}}</p>
 							@php echo $normal->long_content; @endphp
