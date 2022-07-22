@@ -8,7 +8,7 @@
                                     <h2>{{$about->caption ?? ''}}</h2>
                                     <p>{{$about->short_content ?? ''}}</p>
                                     <a
-                                        href="#"
+                                        href="{{route('readmore',$about->id)}}"
                                         class="theme-button-one"
                                         >Read More</a
                                     >

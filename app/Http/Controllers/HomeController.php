@@ -289,6 +289,10 @@ class HomeController extends Controller
         return view("website.job_detail_single_page")->with(['job'=>$job,'menus'=>$menus,'global_setting'=>$global_setting]);
     }
     public function ReadMore($slug){
-        return "read more";
+        $normal = Navigation::where('id',$slug)->first();
+        //return $normal;
+        $global_setting = GlobalSetting::all()->first(); 
+        $menus = Navigation::query()->where('nav_category','Main')->where('page_type','!=','Job')->where('page_type','!=','Photo Gallery')->where('page_type','!=','Notice')->where('parent_page_id',0)->where('page_status','1')->orderBy('position','ASC')->get();
+        return view("website.normal")->with(['normal'=>$normal,'menus'=>$menus,'global_setting'=>$global_setting,'job_slug'=>$slug]);
     }
 }
