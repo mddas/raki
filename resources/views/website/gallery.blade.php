@@ -38,7 +38,7 @@
           		</div>
 			</section>
 		  @endif
-        @include("website.company_success")
+        <!-- @include("website.company_success") -->
         @include("website.partner")
     @endsection
     
