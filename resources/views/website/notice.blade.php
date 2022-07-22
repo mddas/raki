@@ -28,7 +28,7 @@
 										</div>
 										<div id="collapse{{$key+1}}" class="panel-collapse collapse show">
 										<div class="panel-body">
-											<p>{{$notice->main_content}}</p>
+											<p>{{$notice->long_content}}</p>
 										</div>
 										</div>
 									</div> <!-- /panel 1 -->									
