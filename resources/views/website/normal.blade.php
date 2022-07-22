@@ -26,19 +26,30 @@
 				About Company Stye Two
 			============================================== 
 			-->
+			<style>
+				.wrapingimage  
+					{  
+					float: left;   
+					margin: 30px 12px 3px 4px;   
+					border: 2px solid blue;  
+					}   
+			</style>
 			<div class="about-compnay section-spacing">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-6 col-12 text order-lg-last">
-							<div class="theme-title-one mb-20">
-								<h2>{{$normal->caption}}</h2>
-							</div> <!-- /.theme-title-one -->
+						<div class="col-lg-12 col-12">
+							<div class="wrapingimage">   
+								<img src="{{$normal->banner_image}}" alt="" class="left-img">
+							</div>
+							
+								<h3><u>{{$normal->caption}}</u></h3>
+							 <!-- /.theme-title-one -->
 							<p class="mb-20">{{$normal->short_content}}</p>
 							@php echo $normal->long_content; @endphp
 						</div> <!-- /.col- -->
-						<div class="col-lg-6 col-12 order-lg-first">
-							<img src="{{$normal->banner_image}}" alt="" class="left-img">
-						</div>
+						<!-- <div class="col-lg-6 col-12 order-lg-first">
+							<img src="s{{$normal->banner_image}}" alt="" class="left-img">
+						</div> -->
 					</div> <!-- /.row -->
 				</div> <!-- /.container -->
 			</div> <!-- /.about-compnay-two -->
