@@ -1,0 +1,3 @@
+/home/md/Desktop/radiant/top-job-nepal/resources/views/admin
+/home/md/Desktop/radiant/top-job-nepal/resources/views/website/company_partner.blade.php
+/home/md/Desktop/radiant/top-job-nepal/resources/views/website/company_success.blade.php

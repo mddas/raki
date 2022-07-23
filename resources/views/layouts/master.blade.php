@@ -28,6 +28,9 @@
 	</head>
 
 	<body>
+        	<div id="loader-wrapper">
+				<div id="loader"></div>
+			</div>
 		<div class="main-page-wrapper">
 			<header class="header-one">
 				<div class="top-header">
