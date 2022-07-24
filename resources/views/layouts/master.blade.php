@@ -5,6 +5,36 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+
+        <!-----SEO--------->
+
+  <title>{{$seo->page_titile ?? $global_setting->page_title}}</title>
+  <meta name="title" content="{{$seo->page_titile ?? $global_setting->page_title}}">
+  <meta name="description" content="{{$seo->page_description ?? $global_setting->page_description}}">
+  <meta name="keywords" content="{{$seo->page_keyword ?? $global_setting->page_keyword}}">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="1 days">
+  <meta name="author" content="{{$global_setting->site_name ?? ''}}">
+
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{$global_setting->website_full_address ?? ''}}">
+  <meta property="og:title" content="{{$seo->page_title ?? $global_setting->page_title}}">
+  <meta property="og:description" content="{{$seo->page_description ?? $global_setting->page_description}}">
+  <meta property="og:image" content="{{$seo->banner_image ?? '/uploads/icons/'.$global_setting->site_logo}}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{$global_setting->website_full_address ?? ''}}">
+  <meta property="twitter:title" content="{{$seo->page_title ?? $global_setting->page_title}}">
+  <meta property="twitter:description" content="{{$seo->page_description ?? $global_setting->page_description}}">
+  <meta property="twitter:image" content="{{$seo->banner_image ?? '/uploads/icons/'.$global_setting->site_logo}}">
+
+<!-----END SEO------->
+
 		<!-- For IE -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!-- For Resposive Device -->
@@ -16,8 +46,7 @@
 		<meta name="msapplication-navbutton-color" content="#061948">
 		<!-- iOS Safari -->
 		<meta name="apple-mobile-web-app-status-bar-style" content="#061948">
-		<title>{{$global_setting->page_title ?? 'Raki International | WelCome and Namaste'}}</title>
-		<!-- Favicon -->
+
 		<link rel="icon" type="image/png" sizes="56x56" href="{{$global_setting->favicon}}">
 		<!-- Main style sheet -->
 		<link rel="stylesheet" type="text/css" href="/website/css/style.css">
