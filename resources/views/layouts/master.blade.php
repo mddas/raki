@@ -1,5 +1,11 @@
 @php
     $global_setting = app\Models\GlobalSetting::all()->first();
+    if(isset($normal)){
+        $seo = $normal;
+    }
+    elseif(isset($job)){
+        $seo = $job;
+    }
 @endphp
 <!DOCTYPE html>
 <html lang="en">
