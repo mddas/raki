@@ -93,6 +93,9 @@ Route::prefix('admin')->group(function(){
     Route::get('/applied-job-list', 'ContactController@AppliedJob')->name("AppliedJob");
 
 });
+//Route::get('view-all/{slug}',[HomeController::class,"viewAll"])->name['viewall'];
+
+Route::get('view-all',[HomeController::class,"viewAll"])->name('viewall');
 Route::get('read-more/{slug}',[HomeController::class,'ReadMore'])->name('readmore');
 
 Route::POST('jobapply/store/{slug}',[ContactController::class,'ContactStore'])->name('storeapply');
